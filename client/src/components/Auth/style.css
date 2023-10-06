@@ -1,0 +1,53 @@
+.parent{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+.container{
+    height: 85%;
+    width: 80%;
+    border: 5px solid black;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border-radius: 20px;
+}
+.child{
+    width: 60%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.child>button{
+    color: white;
+    background-color: black;
+    font-size: 30px;
+    border-radius: 10px;
+    width: 250px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    padding: 8px;
+}
+.child>button:hover{
+    background-color: white;
+    color: black;
+}
+.image{
+    position: relative;
+    height: 100%;
+    width: 40%;
+}
+
+.image>img{
+    position: relative;
+    width:100%;
+    height: 100%;
+    border-radius: 10px;
+}
