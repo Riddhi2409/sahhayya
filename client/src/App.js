@@ -1,4 +1,5 @@
 import Carausel from "./components/Carausel";
+import Contact from "./components/Contact";
 import DropAndPick from "./components/DropAndPick";
 import Header from "./components/Header";
 import Navigation from "./components/Navigation";
@@ -9,7 +10,8 @@ function App() {
   return (
     <div className="overflow-x-hidden flex flex-col">
       <Navigation />
-      <Home />
+      {/* <Home /> */}
+      <Contact />
     </div>
   );
 }
