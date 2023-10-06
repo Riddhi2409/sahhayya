@@ -60,10 +60,10 @@ const SignupAgent = () => {
            <input name="vechileNo" type="text" placeholder='Enter your vechile no.'
            style={styleCss} onChange={(e)=>{handleChange(e)}}/>
 
-           <button style={{height:"45px",fontSize:"22px",marginTop:"13px"}}>
+           <button style={{height:"45px",fontSize:"22px",marginTop:"20px"}}>
             Submit</button>
            <h6 style={{marginTop:"-5px"}}>OR</h6>
-            <span style={{fontSize:"17px",marginTop:"-20px"}}>
+            <span style={{fontSize:"17px",marginTop:"10px"}}>
             If you already have an account 
             <button onClick={()=>{navigate('/login')}}
              style={{marginLeft:"12px",backgroundColor:"white",

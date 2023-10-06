@@ -48,7 +48,7 @@ const Login = () => {
            <h6>OR</h6>
            <span style={{fontSize:"17px"}}>
             If you don't have an account 
-            <button onClick={()=>{navigate('/')}}
+            <button onClick={()=>{navigate('/signup')}}
             style={{marginLeft:"12px",backgroundColor:"white",
             borderRadius:"10px",padding:"5px",width:"100px",fontWeight:"700"}}>
             Register</button>
