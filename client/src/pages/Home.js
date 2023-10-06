@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import DropAndPick from '../components/DropAndPick';
 import Carausel from '../components/Carausel'
+import Footerbar from '../components/Footerbar';
+import { useUserAuth } from '../store/userAuth';
+import Donor from './Donor';
+import Navigation from '../components/Navigation';
 
 function Home() {
+  const {user,isAuthen,person} = useUserAuth();
+
+  
+  useEffect(()=>{
+    console.log(user,isAuthen,person)
+  },[user,isAuthen,person])
+
+  
   return (
     <div>
+      <Navigation />
         <div className="h-[80vh]">
         <Carausel />
       </div>
@@ -40,6 +53,7 @@ function Home() {
         </div>
       </div>
       <DropAndPick />
+      <Footerbar />
     </div>
   )
 }

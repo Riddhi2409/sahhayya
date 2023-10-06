@@ -19,7 +19,7 @@ const Register = () => {
             If you already have an account 
             <button onClick={()=>{navigate('/login')}}
              style={{marginLeft:"12px",backgroundColor:"white",
-            borderRadius:"10px",padding:"5px",width:"100px",fontWeight:"700"}}>
+            borderRadius:"10px",padding:"5px",width:"100px",fontWeight:"700",border:"2px solid black"}}>
             Login</button>
             </span>
         </div>

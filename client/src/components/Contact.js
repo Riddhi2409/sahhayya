@@ -1,9 +1,12 @@
 import React from 'react';
 import './header.css';
+import Footerbar from './Footerbar';
+import Navigation from './Navigation';
 
 const Contact = () => {
   return (
     <div> 
+      <Navigation />
         <div className='header'>
             <img className="headerImg" src="https://imgs.search.brave.com/0ZaLZ4U0sn4oPlcHHimKgnO3Mcr2nZAUIE7iQU67jgc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTEz/OTc3NjY2OC9waG90/by9nZW5lcm91cy1w/ZW9wbGUtaGVscGlu/Zy10by1wb29yLXBl/b3BsZS5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9dlRmX3NN/RVluT1lXYkduT0dQ/YXFMNlRNUFNyRUN4/Uk8yVU5jUGQ4TGkt/VT0"
                 alt="" />
@@ -32,6 +35,7 @@ const Contact = () => {
         </div> 
       </div>
     </div>
+    <Footerbar />
     </div>
   );
 }

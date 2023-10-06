@@ -17,6 +17,7 @@ exports.donorSignUp = async (req, res) => {
   const { name, email, password, confirmPassword,city } = req.body;
     console.log(name, email, password, confirmPassword,city)
   if (await donor.findOne({ email })) {
+    console.log("pp")
     return res.status(400).json({ success: false, error: "user already exist" });
   } 
     try {
@@ -27,9 +28,11 @@ exports.donorSignUp = async (req, res) => {
         confirmPassword,
         city,
       });
+      console.log("hello");
       const token = signToken(newStudent._id);
       return res.status(200).json({ token: token, success: true });
     } catch (err) {
+      console.log(err)
       return res.status(500).json({ success: false, error: err });
     }
   
@@ -58,6 +61,7 @@ exports.donorLogin = async (req, res) => {
 
 exports.agentSignUp = async (req, res) => {
   const { name, email, password, confirmPassword,city,vehicle,mobile } = req.body;
+  console.log(name, email, password, confirmPassword,city,vehicle,mobile)
 
   if (await agent.findOne({ email })) {
     res
