@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import './StickyComponent.css';
-import sahaya from './images/sahaya.jpeg'
+import sahaya from './images/sahaya.jpeg';
+import {Link} from 'react-router-dom'
 
 
-export default function NavDonor() {
+export default function NavDonor({setShowForm}) {
     const [nav, setNav] = useState(false);
 
     const links = [
         {
             id: 1,
-            link: 'Donate Now'
+            link: 'donate Now'
         },
         {
             id: 2,
@@ -25,13 +26,14 @@ export default function NavDonor() {
 
             <ul className='hidden md:flex'>
                 {links.map(({ id, link }) => (
-                    <li
+                    <div
+                        onClick={()=>{setShowForm(link==='Status' ? false : true)}}
                         key={id}
                         className='px-8 cursor-pointer capitalize font-medium text-gray-400 hover:scale-105 duration-200'>
 
                         {link}
 
-                    </li>
+                    </div>
                 ))}
 
             </ul>

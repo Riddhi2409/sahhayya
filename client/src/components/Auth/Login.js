@@ -26,7 +26,8 @@ const Login = () => {
         marginTop:"20px",
         width:"400px",
         boxSizing:"border-box",
-        paddingBottom:"8px"
+        paddingBottom:"8px",
+        color: "black"
       }
     const handleDonor = (e) => {
       e.preventDefault()

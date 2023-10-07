@@ -1,12 +1,14 @@
 import React,{useState} from 'react'
 import "./FoodDetails.css"
 import Dropdown from 'react-bootstrap/Dropdown';
+import { useUserAuth } from '../../store/userAuth';
 
 const FoodDetails = () => {
+  const {addFood} = useUserAuth();
 
     const [user,setUser] = useState({
         quantity:0,
-        address:"",
+        city:"",
         phoneNo:""
       });
     
@@ -14,6 +16,12 @@ const FoodDetails = () => {
         e.preventDefault();
         setUser({...user, 
           [e.target.name]:e.target.value})
+      }
+
+      function handleSubmit(e){
+        e.preventDefault();
+        addFood(user);
+
       }
 
       const styleCss={
@@ -65,19 +73,19 @@ const FoodDetails = () => {
          style={styleCss}
          onChange={(e)=>{handleChange(e)}}/>
         
-        <input name="address" type="text" 
+        <input name="city" type="text" 
         placeholder='Enter address'
         style={styleCss}
         onChange={(e)=>{handleChange(e)}} required/>
 
-        <input name="phoneNo" type="number" 
+        <input name="phoneNo" type="text" 
         placeholder='Enter phone number'
         style={styleCss}
         onChange={(e)=>{handleChange(e)}} required/>
         
        
         
-        <button style={{height:"45px",fontSize:"22px",marginTop:"25px"}}>
+        <button style={{height:"45px",fontSize:"22px",marginTop:"25px"}} onClick={handleSubmit}>
         Submit</button>
 
       </form>

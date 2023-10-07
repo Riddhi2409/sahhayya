@@ -8,6 +8,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    opacity: 5;
   }
   .parent>h1{
      color: white;

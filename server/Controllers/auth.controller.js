@@ -5,6 +5,7 @@ const agent = require("../Models/agent.model");
 const donor = require("../Models/donor.model");
 
 const jwt = require("jsonwebtoken");
+const { Console } = require('console');
 // const { decode } = require('punycode');
 
 
@@ -99,7 +100,7 @@ exports.agentLogin = async (req, res) => {
 };
 
 exports.agentProtect = async(req,res,next) => {
-    const testToken = req.headers.authorization;
+    const testToken = req.user;
 
     var token;
     if (testToken && testToken.startsWith('bearer')){
@@ -108,8 +109,9 @@ exports.agentProtect = async(req,res,next) => {
     if (!token){
       res.status(401).json({error: "User is not logged in"})
     }
-    jwt.verify(token,process.env.SECRET_TOKEN,async function(err,decoded){
+    jwt.verify(token,process.env.SECRECT_TOKEN,async function(err,decoded){
       if (err){
+        Console.log(err);
         return res.status(500).send({ auth: false, message: err }); 
       }
       if (!(await agent.findById(decoded.id))){
@@ -117,28 +119,32 @@ exports.agentProtect = async(req,res,next) => {
       }
       
       res.user= decoded;
+      console.log(decoded)
       next();
     })
 
 }
 
 exports.donorProtect =  async(req,res,next) => {
-  const testToken = req.headers.authorization;
 
+  const testToken = req.body.user;
+console.log(testToken)
     var token;
-    if (testToken && testToken.startsWith('bearer')){
-      token=testToken.split(' ')[1];
+    if (testToken ){
+      token=testToken;
     }
     if (!token){
       res.status(401).json({error: "User is not logged in"})
     }
-    jwt.verify(token,process.env.SECRET_TOKEN,async function(err,decoded){
+    jwt.verify(token,process.env.SECRECT_TOKEN,async function(err,decoded){
       if (err){
+        console.log(err)
         return res.status(500).send({ auth: false, message: err }); 
       }
       if (!(await donor.findById(decoded.id))){
         return res.status(500).send({ auth: false, message: "user not exixts" })
       }
+      console.log(decoded)
       res.user= decoded;
       next();
     })
