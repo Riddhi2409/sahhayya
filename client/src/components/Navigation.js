@@ -38,7 +38,7 @@ export default function Navigation() {
             <ul className='hidden md:flex'>
                 {links.map(({ id, link }) => (
                     <div
-                        onClick={()=>navigate(`${link==='home' ? '/': link}`)}
+                        onClick={()=>navigate(`${link==='home' ? '/': `/${link}`}`)}
                         key={id}
                         className='px-4 cursor-pointer capitalize font-medium text-gray-400 hover:scale-105 duration-200'>
 
