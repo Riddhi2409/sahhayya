@@ -15,24 +15,22 @@ const AgentPage = () => {
     ];
 
     return (
-        <div className='parent'>
+        <div className='parent1 flex flex-col gap-6'>
           <h1>Donors in your city</h1>
-            <div className='card-container'>
+            <div className='grid grid-cols-3 gap-4 justify-center items-center w-full mx-20 overflow-y-auto text-black'>
                 {data.map((item, key) => (
-                    <div key={key} className='card-item'>
-                        <Card style={{}}>
-                            <Card.Body>
-                                <Card.Title>{item.name}</Card.Title>
-                                <Card.Text>
-                                    Quantity: {item.quantity}<br />
-                                    Mobile: {item.mobile}<br />
-                                    Address: {item.address}<br />
-                                    Description:{item.description}
-                                </Card.Text>
-                                <Button variant='dark'>Accept</Button>
-                            </Card.Body>
-                        </Card>
-                    </div>
+                    <div
+                    key={key}
+                    className=" flex flex-col items-center justify-center font-serif font-medium  mx-10 min-w-[25em] rounded-xl grad py-2 "
+                  >
+                    <p >Name: {item.name}</p>
+                    <p >Description: {item.description}</p>
+                    <p>Quantity: {item.quantity}</p>
+                    <p className="text-base">Address: {item.address}</p>
+                    <p className="text-base">Mobile: +91{item.mobile}</p>
+                    
+                    <Button variant='dark'>Accept</Button>
+                  </div>
                      ))}
                      </div>
                  </div>
