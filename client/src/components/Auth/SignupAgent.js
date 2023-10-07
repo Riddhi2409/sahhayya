@@ -40,9 +40,9 @@ const SignupAgent = () => {
     paddingBottom:"8px"
   }
   return (
-    <div className='parent'>
-        <div className='container'>
-        <form className='child'>
+    <div className='parent-box'>
+        <div className='container-box'>
+        <form className='child-box'>
            <h1 style={{marginBottom:"-10px",marginTop:"1px"}}>Signup</h1>
 
            <input name="name" type="text" placeholder='Enter your name'

@@ -40,9 +40,9 @@ function SignupDonor() {
   }
 
   return (
-    <div className='parent'>
-        <div className='container'>
-        <form className='child'>
+    <div className='parent-box'>
+        <div className='container-box'>
+        <form className='child-box'>
            <h1 style={{marginBottom:"10px"}}>Signup</h1>
         
            <input name="name" type="text"

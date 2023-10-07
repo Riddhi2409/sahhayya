@@ -39,9 +39,9 @@ const Login = () => {
 
     }
   return (
-    <div className='parent'>
-        <div className='container'>
-        <form className='child'>
+    <div className='parent-box'>
+        <div className='container-box'>
+        <form className='child-box'>
            <h1>Login</h1>
            
            <input name="email" onChange={(e)=>{handleChange(e)}}

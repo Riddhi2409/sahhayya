@@ -8,9 +8,9 @@ const Register = () => {
     const navigate = useNavigate();
 
   return (
-    <div className='parent'>
-        <div className='container'>
-        <div className='child'>
+    <div className='parent-box'>
+        <div className='container-box'>
+        <div className='child-box'>
             <h1>Sign up as a</h1>
             <button onClick={()=>{navigate('/signupDonor')}}>Donor</button>
             <button onClick={()=>{navigate('/signupAgent')}}>Agent</button>

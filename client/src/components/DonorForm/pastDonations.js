@@ -1,20 +1,25 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './AgentPage.css'; // Create this CSS file
-import { useUserAuth } from '../../store/userAuth';
+import './AgentPage.css'; 
 
-const PastDonations = () => {
-    const {getFood,userFood} = useUserAuth()
-    useEffect(()=>{
-        getFood();
-    },[])
+const pastDonations = () => {
+    const data = [
+        { quantity: 300, description:"",foodType:"",assigned:true,delivered:true},
+        { quantity: 300, description:"",foodType:"" },
+        { quantity: 300, description:"",foodType:"" },
+        { quantity: 300, description:"",foodType:"" },
+        { quantity: 300, description:"",foodType:"" },
+        { quantity: 300, description:"",foodType:"" },
+       
+    ];
+
     return (
-        <div className='parent '>
-          <h1>Your Donations</h1>
+        <div className='parent' style={{backgroundColor:"black"}}>
+          <h1>Your Past Donations</h1>
             <div className='card-container'>
-                {userFood.map((item, key) => (
+                {data.map((item, key) => (
                     <div key={key} className='card-item'>
                         <Card style={{}}>
                             <Card.Body>
@@ -22,9 +27,9 @@ const PastDonations = () => {
                                 <Card.Text style={{fontWeight:"500"}}>
                                     Description: {item.description}<br />
                                     Quantity: {item.quantity}<br />
-                                    {/* food-type: {item.address}<br /> */}
-                                    assigned:{item.assigned}<br />
-                                    delivered:{item.delivered}
+                                    food-type: {item.address}<br />
+                                    assigned:{item.assigned?("true"):("false")}<br />
+                                    delivered:{item.delivered?("true"):("false")}
                                 </Card.Text>
                             </Card.Body>
                         </Card>
@@ -35,4 +40,4 @@ const PastDonations = () => {
              );
          };
          
-         export default  PastDonations
+export default pastDonations;
